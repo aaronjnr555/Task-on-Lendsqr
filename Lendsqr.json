@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "66891aa3-f1cd-43ab-8020-f2b898ca6096",
+		"name": "Task on Lendsqr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29702272",
+		"_collection_link": "https://www.postman.com/martian-moon-404630/workspace/aaron-daniel-chiemezie/collection/29702272-66891aa3-f1cd-43ab-8020-f2b898ca6096?action=share&source=collection_link&creator=29702272"
+	},
+	"item": [
+		{
+			"name": "Validation",
+			"item": [
+				{
+					"name": "Check Karma for Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/karma/:identity",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"karma",
+								":identity"
+							],
+							"variable": [
+								{
+									"key": "identity",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify Customer Bank Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account_number\": \"0425571111\",\r\n    \"bank_code\": \"058\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/verification/bankaccount/bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"verification",
+								"bankaccount",
+								"bvn"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credit Bureaus",
+			"item": [
+				{
+					"name": "Get Credit Report from CRC Credit Bureau",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/creditbureaus/crc/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"creditbureaus",
+								"crc",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Credit Report from First Central Credit Bureau",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/creditbureaus/firstcentral/:bvn",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"creditbureaus",
+								"firstcentral",
+								":bvn"
+							],
+							"variable": [
+								{
+									"key": "bvn",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Decisioning",
+			"item": [
+				{
+					"name": "Get Decision Models",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/decisioning/models",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"decisioning",
+								"models"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Decision Model Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/decisioning/models/:id/settings",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"decisioning",
+								"models",
+								":id",
+								"settings"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Embedded Loans and Payments",
+			"item": [
+				{
+					"name": "Loans",
+					"item": [
+						{
+							"name": "Initialize Loan Application",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": \"c9f0f895fb98ab9159f51fd0297e236d\",\r\n    \"meta\": {\r\n        \"email\": \"ado.john.sule@example.com\",\r\n        \"phone_number\": \"08012345678\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/loans/initialize",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"loans",
+										"initialize"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pay with wallet",
+					"item": [
+						{
+							"name": "Query Payment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/payments/:reference",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"payments",
+										":reference"
+									],
+									"variable": [
+										{
+											"key": "reference",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Data for Lenders",
+			"item": [
+				{
+					"name": "Options",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/data/options",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"data",
+								"options"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/data/users",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"data",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Operational Services",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "Get Wallet",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/profile/wallet",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"profile",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Miscellaneous",
+					"item": [
+						{
+							"name": "Get List of Banks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/banks",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"banks"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Direct Debit",
+			"item": [
+				{
+					"name": "Banks",
+					"item": [
+						{
+							"name": "Get All Banks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/banks?limit=100&page=1&sort_dir=ASC",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"banks"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "sort_dir",
+											"value": "ASC"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "Get All Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://adjutor.lendsqr.com/v2/direct-debit/transactions?limit=10&page=1",
+									"protocol": "https",
+									"host": [
+										"adjutor",
+										"lendsqr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"direct-debit",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Kolo",
+			"item": [
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/kolo/profile",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"kolo",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Bank Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bank_id\": null,\r\n    \"description\": \"\",\r\n    \"account_number\": \"\",\r\n    \"data_source\": [\"email\", \"sms\", \"bank\"],\r\n    \"currency\": \"NGN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://adjutor.lendsqr.com/v2/kolo/bank-accounts",
+							"protocol": "https",
+							"host": [
+								"adjutor",
+								"lendsqr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"kolo",
+								"bank-accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseurl",
+			"value": "https://adjutor.lendsqr.com"
+		},
+		{
+			"key": "validation",
+			"value": "v2"
+		}
+	]
+}
